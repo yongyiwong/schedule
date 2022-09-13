@@ -11,7 +11,7 @@ export class Offer {
   name: string;
 
   // unique identifier for offer
-  @Column({ type: 'varchar', length: 255 })
+  @Column({ type: 'varchar', length: 255, unique: true })
   slug: string;
 
   // offer description
@@ -19,11 +19,11 @@ export class Offer {
   description: string;
 
   // offer requirements
-  @Column({ type: 'text', nullable: true })
+  @Column({ type: 'text' })
   requirements: string;
 
   // offer thumbnail image url
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ type: 'varchar', length: 255 })
   thumbnail: string;
 
   @Column({ type: 'varchar', length: 255, nullable: true })

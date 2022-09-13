@@ -24,19 +24,18 @@ export class OfferService {
     return this.offerRepository.save(offer);
   }
 
-  // TODO: this must be implemented by abstract class
-
   async mock() {
     let offerParams: OfferType[] = [];
 
     try {
       offerParams = offerParams.concat(
-        Offer1Result.responseFactory(Offer1payload) || [],
+        new Offer1Result().responseFactory(Offer1payload) || [],
       );
 
       offerParams = offerParams.concat(
-        Offer2Result.responseFactory(Offer2Payload as Offer2ResponseParams) ||
-          [],
+        new Offer2Result().responseFactory(
+          Offer2Payload as Offer2ResponseParams,
+        ) || [],
       );
 
       await Promise.all(

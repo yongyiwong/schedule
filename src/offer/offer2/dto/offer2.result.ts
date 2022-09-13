@@ -1,9 +1,9 @@
-import { platform } from 'os';
+import { OfferResult } from 'src/offer/offer.result';
 import { OfferType } from 'src/offer/offer.type';
 import { Offer2ResponseParams } from './offer2.response.params';
 
-export class Offer2Result {
-  static responseFactory(data: Offer2ResponseParams): Array<OfferType> {
+export class Offer2Result implements OfferResult {
+  responseFactory(data: Offer2ResponseParams): Array<OfferType> {
     const results = (data?.response?.offers || []).map(offer => {
       const result: OfferType = new OfferType();
       result.name = offer.offer_name;
