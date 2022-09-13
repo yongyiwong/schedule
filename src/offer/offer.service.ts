@@ -41,8 +41,6 @@ export class OfferService {
 
       await Promise.all(
         offerParams.map(async offerParam => {
-          console.log('Mock data here XXXX', offerParams);
-
           await this.create(offerParam);
         }),
       );
