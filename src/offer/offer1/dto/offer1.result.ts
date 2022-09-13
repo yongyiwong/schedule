@@ -10,6 +10,12 @@ export class Offer1Result {
       result.name = data.Offer.name;
       result.slug = data.Offer.short_description;
       result.description = data.Offer.description;
+      result.offerUrlTemplate = data.Offer.tracking_url;
+      result.isDesktop = data.OS.web ? 1 : 0;
+      result.isAndroid = data.OS.android ? 1 : 0;
+      result.isIos = data.OS.ios ? 1 : 0;
+      result.requirements = data.Offer.instructions;
+
       return [result];
     }
     return null;

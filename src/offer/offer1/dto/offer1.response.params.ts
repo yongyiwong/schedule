@@ -1,3 +1,42 @@
+import { IsNotEmpty } from 'class-validator';
+
+class Offer {
+  campaign_id: number;
+  store_id: string;
+  tracking_type: string;
+  campaign_vertical: string;
+  currency_name_singular: string;
+  currency_name_plural: string;
+  network_epc: string;
+  // should be mapped to `icon`
+  icon: string;
+  // should be mapped to `name`
+
+  @IsNotEmpty()
+  name: string;
+  // should be mapped to `offerUrlTemplate`
+  tracking_url: string;
+  // should be mapped to `requirements`
+  instructions: string;
+  disclaimer: string | null;
+  // should be mapped to `description`
+  description: string;
+  short_description: string;
+  offer_sticker_text_1: string;
+  offer_sticker_text_2: string | null;
+  offer_sticker_text_3: string | null;
+  offer_sticker_color_1: string;
+  offer_sticker_color_2: string;
+  offer_sticker_color_3: string;
+  sort_order_setting: string | null;
+  category_1: string;
+  category_2: string | null;
+  amount: number;
+  payout_usd: number;
+  start_datetime: string;
+  end_datetime: string;
+  is_multi_reward: boolean;
+}
 export class Offer1ResponseParams {
   status: string;
   data: {
@@ -14,6 +53,7 @@ export class Offer1ResponseParams {
         // should be mapped to `icon`
         icon: string;
         // should be mapped to `name`
+
         name: string;
         // should be mapped to `offerUrlTemplate`
         tracking_url: string;

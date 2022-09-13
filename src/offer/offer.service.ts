@@ -5,7 +5,7 @@ import { Repository } from 'typeorm';
 import { OfferType } from './offer.type';
 import { Offer1Result } from './offer1/dto/offer1.result';
 import { Offer1payload } from './offer1/offer1.payload';
-
+import { v4 as uuidv4 } from 'uuid';
 import { Offer2Result } from './offer2/dto/offer2.result';
 import { Offer2Payload } from './offer2/offer2.payload';
 import { Offer2ResponseParams } from './offer2/dto/offer2.response.params';
@@ -19,9 +19,8 @@ export class OfferService {
 
   create(offerParams: OfferType): Promise<Offer> {
     const offer = new Offer();
-    offer.name = offerParams.name;
-    offer.description = offerParams.description;
-    offer.slug = offerParams.slug;
+    Object.assign(offer, offerParams);
+    offer.slug = uuidv4();
     return this.offerRepository.save(offer);
   }
 
