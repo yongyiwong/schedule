@@ -33,7 +33,9 @@ export class Offer2ResponseParams {
       // combine platform and device to map to `isDesktop`, `isAndroid`, `isIos`
       platform: string;
       device: string;
-      category: any;
+      category: {
+        [key: string]: string;
+      };
       last_modified: number;
       preview_url: string;
       package_id: string;

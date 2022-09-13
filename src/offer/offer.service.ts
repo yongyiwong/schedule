@@ -29,7 +29,7 @@ export class OfferService {
 
   async mock() {
     let offerParams: OfferType[] = [];
-    console.log('Mock data here');
+
     try {
       const offer1Params = Offer1payload?.data
         ? Object.values(Offer1payload.data)[0]
