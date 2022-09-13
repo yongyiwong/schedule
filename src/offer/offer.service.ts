@@ -32,11 +32,12 @@ export class OfferService {
 
     try {
       offerParams = offerParams.concat(
-        Offer1Result.responseFactory(Offer1payload),
+        Offer1Result.responseFactory(Offer1payload) || [],
       );
 
       offerParams = offerParams.concat(
-        Offer2Result.responseFactory(Offer2Payload as Offer2ResponseParams),
+        Offer2Result.responseFactory(Offer2Payload as Offer2ResponseParams) ||
+          [],
       );
 
       await Promise.all(

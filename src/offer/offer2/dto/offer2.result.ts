@@ -11,6 +11,6 @@ export class Offer2Result {
       return result;
     });
 
-    return results;
+    return results || null;
   }
 }
