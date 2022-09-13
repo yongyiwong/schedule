@@ -2,7 +2,7 @@
   "name": "schedule",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Yong Yi Wong",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -34,7 +34,8 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
     "rxjs-compat": "^6.6.3",
-    "typeorm": "^0.2.28"
+    "typeorm": "^0.2.28",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
