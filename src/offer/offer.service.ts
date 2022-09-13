@@ -31,15 +31,9 @@ export class OfferService {
     let offerParams: OfferType[] = [];
 
     try {
-      const offer1Params = Offer1payload?.data
-        ? Object.values(Offer1payload.data)[0]
-        : null;
-
-      if (offer1Params) {
-        offerParams = offerParams.concat(
-          Offer1Result.responseFactory(offer1Params),
-        );
-      }
+      offerParams = offerParams.concat(
+        Offer1Result.responseFactory(Offer1payload),
+      );
 
       offerParams = offerParams.concat(
         Offer2Result.responseFactory(Offer2Payload as Offer2ResponseParams),
